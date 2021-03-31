@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Countdown Clock Website Page Final Countdown Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function changebg() {
+      if (document.getElementById("turnon").innerHTML == "Turn on the lights") {
+        document.getElementById("bd").style.backgroundImage = "url(Vidhi.png)"
+        document.getElementById("turnon").innerHTML = "Turn off the lights"
+      }
+      else {
+        document.getElementById("bd").style.backgroundImage = "url(black.jpg)"
+        document.getElementById("turnon").innerHTML = "Turn on the lights"
+
+      }
+    }
+
+    function playAudio() {
+      var x = document.getElementById("myAudio");
+      if (document.getElementById("turnonmusic").innerHTML == 'Turn on the music') {
+
+        document.getElementById("turnonmusic").innerHTML = 'Turn off the music';
+        console.log(document.getElementById("turnonmusic").innerHTML);
+        x.play();
+      }
+      else {
+        x.pause();
+        document.getElementById("turnonmusic").innerHTML = 'Turn on the music';
+      }
+    }
+  </script>
+</head>
+
+<audio id="myAudio">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<body id="bd">
+  <!-- <embed src="music.mp3" loop="true" autostart="true" width="2" height="0"> -->
+  <div class="overlay"></div>
+  <div class="wrapper">
+    <div class="">
+      <div class="center">
+        <button class="btn" id="turnon" onclick="changebg()" style='margin-right:16px'>Turn on the lights</button>
+
+        <button class="btn" id="turnonmusic" onclick="playAudio()">Turn on the music</button>
+
+      </div>
+      <h1 class="title"><span>22 DOWN</span> <br> BIRTHDAY INCOMING IN</h1>
+      <div class="countdown-container">
+        <div>
+          <p id="days" class="big-text">0</p>
+          <span>Days</span>
+        </div>
+        <div>
+          <p id="hours" class="big-text">0</p>
+          <span>Hours</span>
+        </div>
+        <div>
+          <p id="min" class="big-text">0</p>
+          <span>Min</span>
+        </div>
+        <div>
+          <p id="sec" class="big-text">0</p>
+          <span>Sec</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
